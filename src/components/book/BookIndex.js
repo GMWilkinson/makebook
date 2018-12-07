@@ -15,10 +15,10 @@ class BookIndex extends React.Component {
 
   render() {
     return (
-      <section className="section">
-        <h1 className="title">All the books</h1>
+      <section>
+        <h1>All the books</h1>
         <hr />
-        <div className="box-container">
+        <div className="columns">
           {this.state.books && this.state.books.map(
             book => <BookBox key={book._id} book={book}/>
           )}

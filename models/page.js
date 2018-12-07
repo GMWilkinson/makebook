@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const pageSchema = mongoose.Schema({
+  isFirstPage: { type: Boolean, default: false },
   book: {type: mongoose.Schema.ObjectId, ref: 'Book'},
   text: String,
   choices: [{
-    text1: String,
-    text2: String,
+    text: String,
     nextPage: { type: mongoose.Schema.ObjectId, ref: 'Page' }
   }]
 });

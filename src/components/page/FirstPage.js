@@ -1,17 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 import PageBox from './PageBox';
+import { Link } from 'react-router-dom';
 
-
-export default class PageShow extends React.Component {
+export default class FirstPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   componentDidMount() {
-    const { bookId, pageId } = this.props.match.params;
-    axios.get(`/api/books/${bookId}/pages/${pageId}`)
+    axios.get(`/api/books/${this.props.match.params.id}/pages/first`)
       .then(res => {
         console.log({ page: res.data });
         this.setState({ page: res.data });
@@ -25,14 +24,10 @@ export default class PageShow extends React.Component {
         {page
           ?
           <div>
-            <h1>Page</h1>
-            <h2>{ page.title }</h2>
-            <div className="columns">
-              {this.state.page && this.state.page.map(
-                page => <PageBox key={page._id} book={page}/>
-              )}
-            </div>
+            <h1>Page 1</h1>
+            <p>{page.text}</p>
           </div>
+
           :
           <p>Please wait...</p>}
       </section>
