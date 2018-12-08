@@ -28,9 +28,9 @@ var _PageIndex = require('./components/page/PageIndex');
 
 var _PageIndex2 = _interopRequireDefault(_PageIndex);
 
-var _PageShow = require('./components/page/PageShow');
+var _NextPage = require('./components/page/NextPage');
 
-var _PageShow2 = _interopRequireDefault(_PageShow);
+var _NextPage2 = _interopRequireDefault(_NextPage);
 
 var _FirstPage = require('./components/page/FirstPage');
 
@@ -90,8 +90,8 @@ var App = function (_React$Component) {
               _reactRouterDom.Switch,
               null,
               _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/books', component: _BookIndex2.default }),
+              _react2.default.createElement(_reactRouterDom.Route, { path: '/books/:id/pages/:pageId/options', component: _NextPage2.default }),
               _react2.default.createElement(_reactRouterDom.Route, { path: '/books/:id/pages/first', component: _FirstPage2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { path: '/books/:id/pages/:pageId', component: _PageShow2.default }),
               _react2.default.createElement(_reactRouterDom.Route, { path: '/books/:id/pages', component: _PageIndex2.default }),
               _react2.default.createElement(_reactRouterDom.Route, { path: '/books/:id', component: _BookShow2.default }),
               _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/new', component: _New2.default }),

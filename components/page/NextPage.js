@@ -28,25 +28,25 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var FirstPage = function (_React$Component) {
-  _inherits(FirstPage, _React$Component);
+var NextPage = function (_React$Component) {
+  _inherits(NextPage, _React$Component);
 
-  function FirstPage(props) {
-    _classCallCheck(this, FirstPage);
+  function NextPage(props) {
+    _classCallCheck(this, NextPage);
 
-    var _this = _possibleConstructorReturn(this, (FirstPage.__proto__ || Object.getPrototypeOf(FirstPage)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (NextPage.__proto__ || Object.getPrototypeOf(NextPage)).call(this, props));
 
     _this.state = {};
+
     return _this;
   }
 
-  _createClass(FirstPage, [{
+  _createClass(NextPage, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
 
-      _axios2.default.get('/api/books/' + this.props.match.params.id + '/pages/first').then(function (res) {
-        // console.log({ page: res.data });
+      _axios2.default.get('/api/books/' + this.props.match.params.id + '/pages/' + this.props.match.params.pageId + '/options').then(function (res) {
         _this2.setState({ page: res.data });
       });
     }
@@ -54,55 +54,24 @@ var FirstPage = function (_React$Component) {
     key: 'render',
     value: function render() {
       var page = this.state.page;
-      console.log('test', page);
+      console.log('test', this.props.match.params.pageId);
       return _react2.default.createElement(
         'section',
         null,
-        page ? _react2.default.createElement(
+        _react2.default.createElement(
           'div',
           null,
           _react2.default.createElement(
             'h1',
             null,
-            'Page 1'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            page.text
-          ),
-          _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[0]._id + '/options' },
-              _react2.default.createElement(
-                'p',
-                null,
-                page.choices[0].text
-              )
-            ),
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[1]._id + '/options' },
-              _react2.default.createElement(
-                'p',
-                null,
-                page.choices[1].text
-              )
-            )
+            'Next page'
           )
-        ) : _react2.default.createElement(
-          'p',
-          null,
-          'Please wait...'
         )
       );
     }
   }]);
 
-  return FirstPage;
+  return NextPage;
 }(_react2.default.Component);
 
-exports.default = FirstPage;
+exports.default = NextPage;

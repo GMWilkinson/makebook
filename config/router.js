@@ -33,6 +33,7 @@ router.route('/books/:bookId/pages/:pageId')
 
 router.route('/books/:bookId/pages/:pageId/options')
   // .put(books.edit)
+  .get(pages.show)
   .post(pages.create);
 
 module.exports = router;

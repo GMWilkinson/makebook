@@ -16,7 +16,7 @@ function showRoute(req, res, next) {
 
 
 function createRoute(req, res, next) {
-  Page.create(req.body)
+  Page.create(req.params.bookId)
     .then(page => res.status(201).json(page))
     .catch(next);
 }
