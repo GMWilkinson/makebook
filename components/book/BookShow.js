@@ -14,11 +14,9 @@ var _axios = require('axios');
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _PageShow = require('../page/PageShow');
-
-var _PageShow2 = _interopRequireDefault(_PageShow);
-
 var _reactRouterDom = require('react-router-dom');
+
+var _auth = require('../../lib/auth');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -76,6 +74,15 @@ var BookShow = function (_React$Component) {
               'figure',
               { className: 'image is-3by2' },
               _react2.default.createElement('img', { src: book.image })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            (0, _auth.isAuthenticated)() && _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/books/' + book._id + '/new-page/first' },
+              'Start creating your book.'
             )
           )
         ) : _react2.default.createElement(

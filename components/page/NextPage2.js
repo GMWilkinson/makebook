@@ -14,10 +14,6 @@ var _axios = require('axios');
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _PageBox = require('./PageBox');
-
-var _PageBox2 = _interopRequireDefault(_PageBox);
-
 var _reactRouterDom = require('react-router-dom');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -28,20 +24,20 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var NextPage = function (_React$Component) {
-  _inherits(NextPage, _React$Component);
+var NextPage2 = function (_React$Component) {
+  _inherits(NextPage2, _React$Component);
 
-  function NextPage(props) {
-    _classCallCheck(this, NextPage);
+  function NextPage2(props) {
+    _classCallCheck(this, NextPage2);
 
-    var _this = _possibleConstructorReturn(this, (NextPage.__proto__ || Object.getPrototypeOf(NextPage)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (NextPage2.__proto__ || Object.getPrototypeOf(NextPage2)).call(this, props));
 
     _this.state = {};
     _this.handleClick = _this.handleClick.bind(_this);
     return _this;
   }
 
-  _createClass(NextPage, [{
+  _createClass(NextPage2, [{
     key: 'handleClick',
     value: function handleClick() {
       var _this2 = this;
@@ -65,7 +61,6 @@ var NextPage = function (_React$Component) {
     value: function render() {
       var page = this.state.page;
       console.log('next page test', this.state.page);
-      console.log('another bloody test');
       return _react2.default.createElement(
         'section',
         null,
@@ -87,7 +82,7 @@ var NextPage = function (_React$Component) {
             null,
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[0].nextPage + '/options/2' },
+              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[0].nextPage + '/options' },
               _react2.default.createElement(
                 'p',
                 null,
@@ -96,7 +91,7 @@ var NextPage = function (_React$Component) {
             ),
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[1].nextPage + '/options/2' },
+              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[1].nextPage + '/options' },
               _react2.default.createElement(
                 'p',
                 null,
@@ -113,7 +108,7 @@ var NextPage = function (_React$Component) {
     }
   }]);
 
-  return NextPage;
+  return NextPage2;
 }(_react2.default.Component);
 
-exports.default = NextPage;
+exports.default = NextPage2;

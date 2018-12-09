@@ -14,15 +14,15 @@ export default class New extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('Submit handled', this.state);
-    axios.post(`/api/books/${this.props.match.params.id}`, this.state)
-      .then(() => this.props.history.push(`/api/books/${this.props.match.params.id}`));
+    console.log('Submit handled', this.props.match.params.BookId);
+    axios.post(`/api/books/${this.props.match.params.BookId}/new-page/first`, this.state)
+      .then(() => this.props.history.push(`/books/${this.props.match.params.BookId}/new-page`));
   }
 
   render() {
     return(
       <section>
-        <h2 className="title is-2">Create your own story!</h2>
+        <h2 className="title is-2">First Page</h2>
         {isAuthenticated() && <p className="title is-3">Created by {decodeToken().username}</p>}
         <PageForm
           handleChange = {this.handleChange}

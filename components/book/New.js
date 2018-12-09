@@ -16,9 +16,9 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _common = require('../../lib/common');
 
-var _PageForm = require('./PageForm');
+var _NewBookForm = require('./NewBookForm');
 
-var _PageForm2 = _interopRequireDefault(_PageForm);
+var _NewBookForm2 = _interopRequireDefault(_NewBookForm);
 
 var _auth = require('../../lib/auth');
 
@@ -72,7 +72,7 @@ var New = function (_React$Component) {
           'Created by ',
           (0, _auth.decodeToken)().username
         ),
-        _react2.default.createElement(_PageForm2.default, {
+        _react2.default.createElement(_NewBookForm2.default, {
           handleChange: this.handleChange,
           handleSubmit: this.handleSubmit
         })

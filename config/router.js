@@ -27,14 +27,18 @@ router.route('/books/:bookId/pages/first')
   .get(pages.first)
   .post(pages.create);
 
+router.route('/books/:bookId/pages/:pageId/options')
+  .get(pages.page)
+  .post(pages.create);
+
 router.route('/books/:bookId/pages/:pageId')
   .get(pages.show)
   .post(pages.create);
 
-router.route('/books/:bookId/pages/:pageId/options')
-  // .put(books.edit)
-  .get(pages.show)
-  .post(pages.create);
+// router.route('/books/:bookId/pages/:pageId/options')
+//   // .put(books.edit)
+//   .get(pages.show)
+//   .post(pages.create);
 
 module.exports = router;
 // Create a page option:

@@ -32,7 +32,10 @@ const pageIds = [
   '5be9860fcb16d525543aeda3',
   '5be9860fcb16d525543aeda4',
   '5be9860fcb16d525543aeda5',
-  '5be9860fcb16d525543aeda6'
+  '5be9860fcb16d525543aeda6',
+  '5be9860fcb16d525543aeda7',
+  '5be9860fcb16d525543aeda8',
+  '5be9860fcb16d525543aeda9'
 ];
 
 const bookData = [{
@@ -54,14 +57,15 @@ const pageData = [{
   text: 'You encounter a giant, evil Squirrelgoat',
   choices: [{
     text: 'Run away',
-    nextPage: pageIds[1]
+    nextPage: pageIds[7]
   }, {
     text: 'Fight!!!',
-    nextPage: pageIds[2]
+    nextPage: pageIds[8]
   }]
 }, {
   _id: pageIds[1],
   book: bookIds[0],
+  isFirstPage: false,
   text: 'You escape, but run into a slime covered Nargle Blaster',
   choices: [{
     text: 'Try to eat it',
@@ -73,6 +77,7 @@ const pageData = [{
 }, {
   _id: pageIds[2],
   book: bookIds[0],
+  isFirstPage: false,
   text: 'Nice!, Eating Nargle Blasters invigorates you, weirdo.',
   choices: [{
     text: 'Try to eat it',
@@ -82,6 +87,30 @@ const pageData = [{
     nextPage: pageIds[0]
   }]
 }, {
+  _id: pageIds[7],
+  book: bookIds[0],
+  isFirstPage: false,
+  text: 'choice 1 answer',
+  choices: [{
+    text: 'Take to choice 2 page',
+    nextPage: pageIds[8]
+  }, {
+    text: 'take to weirdo page',
+    nextPage: pageIds[2]
+  }]
+}, {
+  _id: pageIds[8],
+  book: bookIds[0],
+  isFirstPage: false,
+  text: 'Choice 2 answer',
+  choices: [{
+    text: 'Take to weirdo page',
+    nextPage: pageIds[2]
+  }, {
+    text: 'Take to escape page',
+    nextPage: pageIds[1]
+  }]
+},{
   _id: pageIds[3],
   isFirstPage: true,
   book: bookIds[1],

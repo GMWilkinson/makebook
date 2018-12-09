@@ -1,32 +1,39 @@
 import React from 'react';
 import axios from 'axios';
-import PageBox from './PageBox';
 import { Link } from 'react-router-dom';
 
-export default class FirstPage extends React.Component {
+export default class NextPage2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-    axios.get(`/api/books/${this.props.match.params.id}/pages/first`)
+  handleClick() {
+    axios.get(`/api/books/${this.props.match.params.id}/pages/${this.props.match.params.pageId}/options`)
       .then(res => {
-        // console.log({ page: res.data });
+        this.setState({ page: res.data });
+      });
+  }
+  componentDidMount() {
+    axios.get(`/api/books/${this.props.match.params.id}/pages/${this.props.match.params.pageId}/options`)
+      .then(res => {
+        console.log('this is res.data', res.data);
         this.setState({ page: res.data });
       });
   }
 
+
   render() {
     const page = this.state.page;
-    console.log('test', this.state.page);
+    console.log('next page test', this.state.page);
     return (
       <section>
         {page
           ?
           <div>
-            <h1>Page 1</h1>
             <p>{page.text}</p>
+            <p>{page.choices[0].nextPage}</p>
             <div>
               <Link to={`/books/${this.props.match.params.id}/pages/${page.choices[0].nextPage}/options`}>
                 <p>{page.choices[0].text}</p>
@@ -36,7 +43,6 @@ export default class FirstPage extends React.Component {
               </Link>
             </div>
           </div>
-
           :
           <p>Please wait...</p>}
       </section>

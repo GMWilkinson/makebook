@@ -50,9 +50,9 @@ var New = function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
-      console.log('Submit handled', this.state);
-      _axios2.default.post('/api/books', this.state).then(function () {
-        return _this2.props.history.push('/books');
+      console.log('Submit handled', this.props.match.params.BookId);
+      _axios2.default.post('/api/books/' + this.props.match.params.BookId + '/new-page/first', this.state).then(function () {
+        return _this2.props.history.push('/books/' + _this2.props.match.params.BookId + '/new-page');
       });
     }
   }, {
@@ -64,7 +64,7 @@ var New = function (_React$Component) {
         _react2.default.createElement(
           'h2',
           { className: 'title is-2' },
-          'Create your own story!'
+          'First Page'
         ),
         (0, _auth.isAuthenticated)() && _react2.default.createElement(
           'p',

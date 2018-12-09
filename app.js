@@ -24,19 +24,23 @@ var _BookShow = require('./components/book/BookShow');
 
 var _BookShow2 = _interopRequireDefault(_BookShow);
 
-var _PageIndex = require('./components/page/PageIndex');
+var _NewFirstPage = require('./components/page/NewFirstPage');
 
-var _PageIndex2 = _interopRequireDefault(_PageIndex);
+var _NewFirstPage2 = _interopRequireDefault(_NewFirstPage);
 
 var _NextPage = require('./components/page/NextPage');
 
 var _NextPage2 = _interopRequireDefault(_NextPage);
 
+var _NextPage3 = require('./components/page/NextPage2');
+
+var _NextPage4 = _interopRequireDefault(_NextPage3);
+
 var _FirstPage = require('./components/page/FirstPage');
 
 var _FirstPage2 = _interopRequireDefault(_FirstPage);
 
-var _New = require('./components/page/New');
+var _New = require('./components/book/New');
 
 var _New2 = _interopRequireDefault(_New);
 
@@ -90,9 +94,10 @@ var App = function (_React$Component) {
               _reactRouterDom.Switch,
               null,
               _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/books', component: _BookIndex2.default }),
+              _react2.default.createElement(_reactRouterDom.Route, { path: '/books/:id/pages/:pageId/options/2', component: _NextPage4.default }),
               _react2.default.createElement(_reactRouterDom.Route, { path: '/books/:id/pages/:pageId/options', component: _NextPage2.default }),
+              _react2.default.createElement(_reactRouterDom.Route, { path: '/books/:id/new-page/first', component: _NewFirstPage2.default }),
               _react2.default.createElement(_reactRouterDom.Route, { path: '/books/:id/pages/first', component: _FirstPage2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { path: '/books/:id/pages', component: _PageIndex2.default }),
               _react2.default.createElement(_reactRouterDom.Route, { path: '/books/:id', component: _BookShow2.default }),
               _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/new', component: _New2.default }),
               _react2.default.createElement(_reactRouterDom.Route, { path: '/users', component: _Profile2.default }),

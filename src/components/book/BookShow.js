@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import PageShow from '../page/PageShow';
 import { Link } from 'react-router-dom';
+import { isAuthenticated } from '../../lib/auth';
 
 export default class BookShow extends React.Component {
   constructor(props) {
@@ -29,8 +29,10 @@ export default class BookShow extends React.Component {
               <figure className="image is-3by2">
                 <img src={ book.image } />
               </figure>
-
             </Link>
+            <div>
+              {isAuthenticated() && <Link to={`/books/${book._id}/new-page/first`}>Start creating your book.</Link>}
+            </div>
           </div>
           :
           <p>Please wait...</p>}

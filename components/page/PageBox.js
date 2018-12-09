@@ -1,27 +1,54 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = require('react-router-dom');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import { Link } from 'react-router-dom';
-
 function PageBox(_ref) {
-  var book = _ref.book;
+  var page = _ref.page;
 
   return _react2.default.createElement(
-    "article",
-    { className: "column is-4" },
+    'div',
+    null,
     _react2.default.createElement(
-      "p",
+      'h1',
       null,
-      book.text
+      'Page 1'
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      page.text
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[0]._id + '/options' },
+        _react2.default.createElement(
+          'p',
+          null,
+          page.choices[0].text
+        )
+      ),
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[1]._id + '/options' },
+        _react2.default.createElement(
+          'p',
+          null,
+          page.choices[1].text
+        )
+      )
     )
   );
 }

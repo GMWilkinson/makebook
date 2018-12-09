@@ -8,8 +8,7 @@ function indexRoute(req, res, next) {
 }
 
 function showRoute(req, res, next) {
-  Page.findById(req.params.pageId)
-    .populate('book')
+  Page.find({ book: req.params.pageId })
     .then(page => res.json(page))
     .catch(next);
 }
@@ -27,10 +26,15 @@ function firstRoute(req, res, next) {
     .then(page => res.json(page))
     .catch(next);
 }
-
+function pageRoute(req, res, next) {
+  Page.findById(req.params.pageId )
+    .then(page => res.json(page))
+    .catch(next);
+}
 module.exports ={
   index: indexRoute,
   create: createRoute,
   show: showRoute,
-  first: firstRoute
+  first: firstRoute,
+  page: pageRoute
 };

@@ -54,7 +54,7 @@ var FirstPage = function (_React$Component) {
     key: 'render',
     value: function render() {
       var page = this.state.page;
-      console.log('test', page);
+      console.log('test', this.state.page);
       return _react2.default.createElement(
         'section',
         null,
@@ -76,7 +76,7 @@ var FirstPage = function (_React$Component) {
             null,
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[0]._id + '/options' },
+              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[0].nextPage + '/options' },
               _react2.default.createElement(
                 'p',
                 null,
@@ -85,7 +85,7 @@ var FirstPage = function (_React$Component) {
             ),
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[1]._id + '/options' },
+              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[1].nextPage + '/options' },
               _react2.default.createElement(
                 'p',
                 null,
