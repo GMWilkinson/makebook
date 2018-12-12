@@ -23,7 +23,8 @@ const userData = [{
 
 const bookIds = [
   '5be9860fcb16d525543beda1',
-  '5be9860fcb16d525543beda2'
+  '5be9860fcb16d525543beda2',
+  '5be9860fcb16d525543beda3'
 ];
 
 const pageIds = [
@@ -35,19 +36,29 @@ const pageIds = [
   '5be9860fcb16d525543aeda6',
   '5be9860fcb16d525543aeda7',
   '5be9860fcb16d525543aeda8',
-  '5be9860fcb16d525543aeda9'
+  '5be9860fcb16d525543aeda9',
+  '5be9860fcb16d525543feda8',
+  '5be9860fcb16d525543feda9'
 ];
 
 const bookData = [{
   _id: bookIds[0],
+  isCompleted: true,
   title: 'My first book',
   author: 'Grant',
   image: 'http://www.dahkai.com/postpic/2010/09/old-leather-book-cover_81124.jpg'
 }, {
   _id: bookIds[1],
+  isCompleted: true,
   title: 'My great book',
   author: 'Rob',
   image: 'http://www.dahkai.com/postpic/2010/09/old-leather-book-cover_81124.jpg'
+}, {
+  _id: bookIds[2],
+  isCompleted: false,
+  title: 'Uncompleted book',
+  author: 'Grant',
+  image: 'https://boxshot.com/boxshot/gallery/3d-ebook-cover/book-10.png'
 }];
 
 const pageData = [{
@@ -132,6 +143,27 @@ const pageData = [{
   book: bookIds[1],
   text: 'You meet your destiny. You win. (And then die.)',
   choices: []
+},  {
+  _id: pageIds[9],
+  book: bookIds[2],
+  isFirstPage: true,
+  text: 'Page 1 of creating book test',
+  choices: [{
+    text: 'page 2 of test',
+    nextPage: pageIds[10]
+  }]
+}, {
+  _id: pageIds[10],
+  isFirstPage: false,
+  book: bookIds[2],
+  text: 'Page 2 of creating book test',
+  choices: [{
+    text: 'page 1 of test',
+    nextPage: pageIds[9]
+  }, {
+    text: 'page 1 of test',
+    nextPage: pageIds[9]
+  }]
 }];
 
 mongoose.connect(dbURI);

@@ -1,7 +1,12 @@
 const Book = require('../models/book');
 
 function indexRoute(req, res, next) {
-  Book.find()
+  Book.find({ book: req.params.bookId, isCompleted: true})
+    .then(books => res.json(books))
+    .catch(next);
+}
+function creatingIndexRoute(req, res, next) {
+  Book.find({ book: req.params.bookId, isCompleted: false})
     .then(books => res.json(books))
     .catch(next);
 }
@@ -19,6 +24,7 @@ function createRoute(req, res, next) {
 }
 module.exports ={
   index: indexRoute,
+  creatingIndex: creatingIndexRoute,
   show: showRoute,
   create: createRoute
 };

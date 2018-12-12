@@ -29,11 +29,8 @@ function PageForm(_ref) {
   return _react2.default.createElement(
     'form',
     { onSubmit: handleSubmit },
-    _react2.default.createElement(_FormInput2.default, { name: 'book', type: 'text', handleChange: handleChange }),
+    _react2.default.createElement(_FormInput2.default, { name: 'title', type: 'text', handleChange: handleChange }),
     _react2.default.createElement(_FormTextarea2.default, { name: 'text', handleChange: handleChange }),
-    _react2.default.createElement(_FormInput2.default, { name: 'choice 1', type: 'text', handleChange: handleChange }),
-    _react2.default.createElement(_FormButton2.default, { text: 'Continue story branch based on this choice' }),
-    _react2.default.createElement(_FormInput2.default, { name: 'choice 2', type: 'text', handleChange: handleChange }),
     _react2.default.createElement(_FormButton2.default, { text: 'Continue story branch based on this choice' })
   );
 }

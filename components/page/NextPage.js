@@ -46,7 +46,8 @@ var NextPage = function (_React$Component) {
     value: function handleClick() {
       var _this2 = this;
 
-      _axios2.default.get('/api/books/' + this.props.match.params.id + '/pages/' + this.props.match.params.pageId + '/options').then(function (res) {
+      console.log('In onClick, match.params', this.props.match.params);
+      _axios2.default.get('/api/books/' + this.props.match.params.id + '/pages/' + this.props.match.params.pageId).then(function (res) {
         _this2.setState({ page: res.data });
       });
     }
@@ -55,7 +56,7 @@ var NextPage = function (_React$Component) {
     value: function componentDidMount() {
       var _this3 = this;
 
-      _axios2.default.get('/api/books/' + this.props.match.params.id + '/pages/' + this.props.match.params.pageId + '/options').then(function (res) {
+      _axios2.default.get('/api/books/' + this.props.match.params.id + '/story').then(function (res) {
         console.log('this is res.data', res.data);
         _this3.setState({ page: res.data });
       });
@@ -87,7 +88,7 @@ var NextPage = function (_React$Component) {
             null,
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[0].nextPage + '/options/2' },
+              { onClick: this.handleClick, to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[0].nextPage },
               _react2.default.createElement(
                 'p',
                 null,
@@ -96,7 +97,7 @@ var NextPage = function (_React$Component) {
             ),
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[1].nextPage + '/options/2' },
+              { to: '/books/' + this.props.match.params.id + '/pages/' + page.choices[1].nextPage },
               _react2.default.createElement(
                 'p',
                 null,

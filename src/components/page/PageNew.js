@@ -1,10 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import { handleChange } from '../../lib/common';
-import PageForm from './PageForm';
+import NewPageForm from './NewPageForm';
 import { isAuthenticated, decodeToken } from '../../lib/auth';
+import { Link } from 'react-router-dom';
 
-export default class NewFirstPage extends React.Component {
+export default class PageNew extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -32,14 +33,17 @@ export default class NewFirstPage extends React.Component {
     return(
       <section>
         <div>
-          <h2 className="title is-2">First Page</h2>
+          <h2 className="title is-2">New Page</h2>
           {isAuthenticated() && <p className="title is-3">Created by {decodeToken().username}</p>}
           <div>
           </div>
-          <PageForm
+          <NewPageForm
             handleChange = {this.handleChange}
             handleSubmit = {this.handleSubmit}
           />
+        </div>
+        <div>
+          <Link to={`/books/${this.props.match.params.id}/pages/${this.props.match.params.pageId}/choices`}>Add choices</Link>
         </div>
       </section>
     );

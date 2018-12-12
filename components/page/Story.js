@@ -28,26 +28,26 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var FirstPage = function (_React$Component) {
-  _inherits(FirstPage, _React$Component);
+var Story = function (_React$Component) {
+  _inherits(Story, _React$Component);
 
-  function FirstPage(props) {
-    _classCallCheck(this, FirstPage);
+  function Story(props) {
+    _classCallCheck(this, Story);
 
-    var _this = _possibleConstructorReturn(this, (FirstPage.__proto__ || Object.getPrototypeOf(FirstPage)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Story.__proto__ || Object.getPrototypeOf(Story)).call(this, props));
 
     _this.state = {};
     _this.handleClick = _this.handleClick.bind(_this);
     return _this;
   }
 
-  _createClass(FirstPage, [{
+  _createClass(Story, [{
     key: 'handleClick',
-    value: function handleClick(pageId) {
+    value: function handleClick() {
       var _this2 = this;
 
-      console.log('In onClick, pageId', pageId);
-      _axios2.default.get('/api/books/' + this.props.match.params.id + '/pages/' + pageId).then(function (res) {
+      console.log('In onClick, match.params', this.props.match.params);
+      _axios2.default.get('' + this.props.match.params.pageId).then(function (res) {
         _this2.setState({ page: res.data });
       });
     }
@@ -56,7 +56,7 @@ var FirstPage = function (_React$Component) {
     value: function componentDidMount() {
       var _this3 = this;
 
-      _axios2.default.get('/api/books/' + this.props.match.params.id + '/pages/first').then(function (res) {
+      _axios2.default.get('/api/books/' + this.props.match.params.id + '/story').then(function (res) {
         // console.log({ page: res.data });
         _this3.setState({ page: res.data });
       });
@@ -64,8 +64,6 @@ var FirstPage = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
-
       var page = this.state.page;
       console.log('test', this.state.page);
       return _react2.default.createElement(
@@ -77,7 +75,7 @@ var FirstPage = function (_React$Component) {
           _react2.default.createElement(
             'h1',
             null,
-            'Page 1'
+            'Next page'
           ),
           _react2.default.createElement(
             'p',
@@ -87,19 +85,24 @@ var FirstPage = function (_React$Component) {
           _react2.default.createElement(
             'div',
             null,
-            this.page && this.page.choices.map(function (choice) {
-              return _react2.default.createElement(
+            _react2.default.createElement(
+              'p',
+              { onClick: this.handleClick },
+              _react2.default.createElement(
                 'p',
-                { key: choice._id, onClick: function onClick() {
-                    return _this4.handleClick(choice.nextPage);
-                  } },
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  choice.text
-                )
-              );
-            })
+                null,
+                page.choices[0].text
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              { onClick: this.handleClick },
+              _react2.default.createElement(
+                'p',
+                null,
+                page.choices[1].text
+              )
+            )
           )
         ) : _react2.default.createElement(
           'p',
@@ -110,7 +113,7 @@ var FirstPage = function (_React$Component) {
     }
   }]);
 
-  return FirstPage;
+  return Story;
 }(_react2.default.Component);
 
-exports.default = FirstPage;
+exports.default = Story;

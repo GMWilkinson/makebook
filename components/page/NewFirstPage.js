@@ -30,13 +30,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var New = function (_React$Component) {
-  _inherits(New, _React$Component);
+var NewFirstPage = function (_React$Component) {
+  _inherits(NewFirstPage, _React$Component);
 
-  function New(props) {
-    _classCallCheck(this, New);
+  function NewFirstPage(props) {
+    _classCallCheck(this, NewFirstPage);
 
-    var _this = _possibleConstructorReturn(this, (New.__proto__ || Object.getPrototypeOf(New)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (NewFirstPage.__proto__ || Object.getPrototypeOf(NewFirstPage)).call(this, props));
 
     _this.state = {};
     _this.handleChange = _common.handleChange.bind(_this);
@@ -44,20 +44,21 @@ var New = function (_React$Component) {
     return _this;
   }
 
-  _createClass(New, [{
+  _createClass(NewFirstPage, [{
     key: 'handleSubmit',
     value: function handleSubmit(e) {
       var _this2 = this;
 
       e.preventDefault();
-      console.log('Submit handled', this.props.match.params.BookId);
-      _axios2.default.post('/api/books/' + this.props.match.params.BookId + '/new-page/first', this.state).then(function () {
-        return _this2.props.history.push('/books/' + _this2.props.match.params.BookId + '/new-page');
+      console.log('Submit handled', this.state);
+      _axios2.default.post('/api/books/' + this.props.match.params.id + '/pages/first', this.state).then(function () {
+        return _this2.props.history.push('/api/books/' + _this2.props.match.params.id + '/pages/first');
       });
     }
   }, {
     key: 'render',
     value: function render() {
+      console.log('what is this', this.props.match.params.id);
       return _react2.default.createElement(
         'section',
         null,
@@ -72,6 +73,7 @@ var New = function (_React$Component) {
           'Created by ',
           (0, _auth.decodeToken)().username
         ),
+        _react2.default.createElement('div', null),
         _react2.default.createElement(_PageForm2.default, {
           handleChange: this.handleChange,
           handleSubmit: this.handleSubmit
@@ -80,7 +82,7 @@ var New = function (_React$Component) {
     }
   }]);
 
-  return New;
+  return NewFirstPage;
 }(_react2.default.Component);
 
-exports.default = New;
+exports.default = NewFirstPage;

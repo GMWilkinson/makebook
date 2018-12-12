@@ -34,7 +34,7 @@ export default class FirstPage extends React.Component {
         {page
           ?
           <div>
-            <h1>Page 1</h1>
+            <h1>Page</h1>
             <p>{page.text}</p>
             <div>
               {page && page.choices.map(choice =>

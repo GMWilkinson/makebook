@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const pageSchema = mongoose.Schema({
-  isFirstPage: { type: Boolean, default: false },
+  isFirstPage: { type: Boolean },
+  pageName: { type: String },
   book: {type: mongoose.Schema.ObjectId, ref: 'Book'},
   text: String,
   choices: [{

@@ -5,6 +5,11 @@
   "repository": "https://github.com/GMWilkinson/makebook.git",
   "author": "Grant Wilkinson <wilkinsonmgrant@gmail.com>",
   "license": "MIT",
+  "nodemonConfig": {
+    "ignore": [
+      "src/*"
+    ]
+  },
   "scripts": {
     "build": "webpack -p",
     "start": "yarn build && node index",

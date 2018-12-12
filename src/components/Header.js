@@ -27,8 +27,9 @@ class Header extends React.Component {
           {isAuthenticated() && <Link to="/users"><img className="image is-64x64" src={decodeToken().image}/></Link>}
         </div>
         <div className="navbar-end">
-          <Link className="navbar-item" to="/books">All the Books</Link>
-          {isAuthenticated() && <Link className="navbar-item" to="/new">Create your own story!</Link>}
+          <Link className="navbar-item" to="/books">Finished Books</Link>
+          {isAuthenticated() && <Link className="navbar-item" to="/books/new">Create your own story!</Link>}
+          {isAuthenticated() && <Link className="navbar-item" to="/books/unfinished">Carry on with a story!</Link>}
           {!isAuthenticated() && <Link className="navbar-item" to="/register">Register</Link>}
           {!isAuthenticated() && <Link className="navbar-item" to="/login">Login</Link>}
           {isAuthenticated() && <a onClick={this.handleLogout} className="navbar-item" to="/login">Logout</a>}

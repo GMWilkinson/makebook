@@ -24,7 +24,7 @@ export default class BookShow extends React.Component {
           ?
           <div>
             <h1>Yay, it worked!</h1>
-            <Link to={`/books/${book._id}/pages/first`}>
+            <Link to={`/books/${book._id}/story`}>
               <h2>{ book.title }</h2>
               <figure className="image is-3by2">
                 <img src={ book.image } />

@@ -5,10 +5,14 @@ import Header from './components/Header';
 import BookIndex from './components/book/BookIndex';
 import BookShow from './components/book/BookShow';
 import NewFirstPage from './components/page/NewFirstPage';
-import NextPage from './components/page/NextPage';
-import NextPage2 from './components/page/NextPage2';
-import FirstPage from './components/page/FirstPage';
-import New from './components/book/New';
+import Story from './components/page/Story';
+import PageIndex from './components/page/PageIndex';
+import PageShow from './components/page/PageShow';
+import Choices from './components/page/Choices';
+import ChoiceShow from './components/page/ChoiceShow';
+import BookNew from './components/book/New';
+import UnfinishedBookIndex from './components/book/UnfinishedBookIndex';
+import PageNew from './components/page/PageNew';
 import AuthRegister from './components/auth/Register';
 import AuthLogin from './components/auth/Login';
 import Profile from './components/auth/Profile';
@@ -26,12 +30,16 @@ class App extends React.Component {
           <div>
             <Switch>
               <Route exact path='/books' component={BookIndex}/>
-              <Route path='/books/:id/pages/:pageId/options/2' component={NextPage2}/>
-              <Route path='/books/:id/pages/:pageId/options' component={NextPage}/>
-              <Route path='/books/:id/new-page/first' component={NewFirstPage}/>
-              <Route path='/books/:id/pages/first' component={FirstPage}/>
+              <Route path='/books/:id/pages/new' component={PageNew}/>
+              <Route path='/books/:bookId/pages/:pageId/choices/show' component={ChoiceShow}/>
+              <Route path='/books/:bookId/pages/:pageId/choices' component={Choices}/>
+              <Route path='/books/:id/pages/new/first' component={NewFirstPage}/>
+              <Route path='/books/:id/pages/:pageId' component={PageShow}/>
+              <Route path='/books/:id/story' component={Story}/>
+              <Route path='/books/:id/pages' component={PageIndex}/>
+              <Route exact path='/books/unfinished' component={UnfinishedBookIndex}/>
+              <Route exact path='/books/new' component={BookNew}/>
               <Route path='/books/:id' component={BookShow}/>
-              <Route exact path='/new' component={New}/>
               <Route path='/users' component={Profile}/>
               <Route exact path='/login' component={AuthLogin}/>
               <Route exact path='/register' component={AuthRegister}/>
