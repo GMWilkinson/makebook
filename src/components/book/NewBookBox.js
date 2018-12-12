@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NewBookBox({ book, handleClick }) {
+function NewBookBox({ book }) {
   return (
-    <section>
+    <section className="column is-4">
       <div>
         <Link to={`/books/${book._id}/first`}>Read.</Link>
       </div>
       <Link to={`/books/${book._id}/pages`}>
-        <article className="column is-4">
+        <article>
           <figure className="image">
             <img src={book.image} />
           </figure>

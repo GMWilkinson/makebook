@@ -9,7 +9,7 @@ import Story from './components/page/Story';
 import PageIndex from './components/page/PageIndex';
 import PageShow from './components/page/PageShow';
 import Choices from './components/page/Choices';
-import ChoiceShow from './components/page/ChoiceShow';
+import PageDisplay from './components/page/PageDisplay';
 import BookNew from './components/book/New';
 import UnfinishedBookIndex from './components/book/UnfinishedBookIndex';
 import PageNew from './components/page/PageNew';
@@ -31,7 +31,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path='/books' component={BookIndex}/>
               <Route path='/books/:id/pages/new' component={PageNew}/>
-              <Route path='/books/:bookId/pages/:pageId/choices/show' component={ChoiceShow}/>
+              <Route path='/books/:bookId/pages/page-display' component={PageDisplay}/>
               <Route path='/books/:bookId/pages/:pageId/choices' component={Choices}/>
               <Route path='/books/:id/pages/new/first' component={NewFirstPage}/>
               <Route path='/books/:id/pages/:pageId' component={PageShow}/>

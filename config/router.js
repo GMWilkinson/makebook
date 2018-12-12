@@ -11,10 +11,12 @@ router.route('/books')
 
 router.route('/new/writing')
   .get(books.creatingIndex)
+  .delete(books.delete)
   .post(books.create);
 
 router.route('/books/:id')
-  .get(books.show);
+  .get(books.show)
+  .delete(books.delete);
 // .post(pages.create);
 // .put(books.update);
 

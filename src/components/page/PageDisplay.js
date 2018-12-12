@@ -4,12 +4,11 @@ import PageBox from './PageBox';
 import { authorizationHeader } from '../../lib/auth';
 import { Link } from 'react-router-dom';
 
-class PageIndex extends React.Component {
+class PageDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
     this.handleClick = this.handleClick.bind(this);
-    this.deletePage = this.deletePage.bind(this);
   }
 
   handleClick(pageId) {
@@ -17,14 +16,6 @@ class PageIndex extends React.Component {
     axios.get(`/api/books/${this.props.match.params.id}/pages/first`)
       .then(res => {
         this.setState({ page: res.data });
-      });
-  }
-
-  deletePage(id) {
-    console.log('deleting page', id);
-    axios.delete(`/api/books/${this.props.match.params.id}/pages/${id}`, authorizationHeader())
-      .then(res => {
-        this.setState({ page: res.data});
       });
   }
 
@@ -53,14 +44,9 @@ class PageIndex extends React.Component {
                     <header className="card-header">
                       <h2>{page.pageName} {page._id}</h2>
                     </header>
-                    <div className="content">
+                    <div>
                       <p className="page-index">{page.text}</p>
                     </div>
-                    <footer className="card-footer">
-                      <Link to={`/books/${book}/pages/${page._id}`} className="card-footer-item">Add Choices</Link>
-                      <a href="#" className="card-footer-item">Edit</a>
-                      <a className="card-footer-item" onClick={() => this.deletePage(page._id)}>Delete</a>
-                    </footer>
                   </div>
                 </div>
               )}
@@ -75,4 +61,4 @@ class PageIndex extends React.Component {
     );
   }
 }
-export default PageIndex;
+export default PageDisplay;

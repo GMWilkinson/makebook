@@ -15,8 +15,9 @@ class BookIndex extends React.Component {
 
   render() {
     return (
-      <section>
-        <h1>All the books</h1>
+      <section className="columns">
+        <hr />
+        <h1 className="subtitle">All the books</h1>
         <hr />
         <div className="columns">
           {this.state.books && this.state.books.map(

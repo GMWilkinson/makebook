@@ -17,6 +17,12 @@ function showRoute(req, res, next) {
     .catch(next);
 }
 
+function deleteRoute(req, res, next) {
+  Book.findByIdAndDelete(req.params.bookId)
+    .then(() => res.sendStatus(204))
+    .catch(next);
+}
+
 function createRoute(req, res, next) {
   Book.create(req.body)
     .then(book => res.status(201).json(book))
@@ -25,6 +31,7 @@ function createRoute(req, res, next) {
 module.exports ={
   index: indexRoute,
   creatingIndex: creatingIndexRoute,
+  delete: deleteRoute,
   show: showRoute,
   create: createRoute
 };

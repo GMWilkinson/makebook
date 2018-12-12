@@ -24,7 +24,9 @@ const userData = [{
 const bookIds = [
   '5be9860fcb16d525543beda1',
   '5be9860fcb16d525543beda2',
-  '5be9860fcb16d525543beda3'
+  '5be9860fcb16d525543beda3',
+  '5be9860fcb16d525543beda4',
+  '5be9860fcb16d525543beda5'
 ];
 
 const pageIds = [
@@ -38,7 +40,16 @@ const pageIds = [
   '5be9860fcb16d525543aeda8',
   '5be9860fcb16d525543aeda9',
   '5be9860fcb16d525543feda8',
-  '5be9860fcb16d525543feda9'
+  '5be9860fcb16d525543feda9',
+  '5be9860fcb16d525543heda1',
+  '5be9860fcb16d525543heda2',
+  '5be9860fcb16d525543heda3',
+  '5be9860fcb16d525543heda4',
+  '5be9860fcb16d525543heda5',
+  '5be9860fcb16d525543heda6',
+  '5be9860fcb16d525543heda7',
+  '5be9860fcb16d525543heda8',
+  '5be9860fcb16d525543heda9'
 ];
 
 const bookData = [{
@@ -59,6 +70,12 @@ const bookData = [{
   title: 'Uncompleted book',
   author: 'Grant',
   image: 'https://boxshot.com/boxshot/gallery/3d-ebook-cover/book-10.png'
+}, {
+  _id: bookIds[3],
+  isCompleted: false,
+  title: 'WDI 37',
+  author: 'Grant',
+  image: 'https://i.pinimg.com/originals/6a/5a/f0/6a5af02950db36b62e18773bb1adbf18.jpg'
 }];
 
 const pageData = [{
@@ -163,6 +180,66 @@ const pageData = [{
   }, {
     text: 'page 1 of test',
     nextPage: pageIds[9]
+  }]
+}, {
+  _id: pageIds[11],
+  isFirstPage: true,
+  book: bookIds[3],
+  text: 'You\'ve just woken up, you forgot to set your alarm last night and you have to leave for college in five minutes. You rush around your house like a bewildered chipmunk trying to find some clean underwear. Suddenly it dawns on you, you have to leave or you\'ll be late for stand-up. Do you...',
+  choices: [{
+    text: 'Sod it! You can get the next train, and I\'m hungry anyway.',
+    nextPage: pageIds[12]
+  }, {
+    text: 'Stick on some trousers and leave',
+    nextPage: pageIds[13]
+  }]
+}, {
+  _id: pageIds[12],
+  book: bookIds[3],
+  isFirstPage: false,
+  text: 'You escape, but run into a slime covered Nargle Blaster',
+  choices: [{
+    text: 'Try to eat it',
+    nextPage: pageIds[0]
+  }, {
+    text: 'Run!!!',
+    nextPage: pageIds[2]
+  }]
+}, {
+  _id: pageIds[13],
+  book: bookIds[3],
+  isFirstPage: false,
+  text: 'Nice!, Eating Nargle Blasters invigorates you, weirdo.',
+  choices: [{
+    text: 'Try to eat it',
+    nextPage: pageIds[1]
+  }, {
+    text: 'Run!!!',
+    nextPage: pageIds[0]
+  }]
+}, {
+  _id: pageIds[14],
+  book: bookIds[3],
+  isFirstPage: false,
+  text: 'choice 1 answer',
+  choices: [{
+    text: 'Take to choice 2 page',
+    nextPage: pageIds[8]
+  }, {
+    text: 'take to weirdo page',
+    nextPage: pageIds[2]
+  }]
+}, {
+  _id: pageIds[15],
+  book: bookIds[3],
+  isFirstPage: false,
+  text: 'Choice 2 answer',
+  choices: [{
+    text: 'Take to weirdo page',
+    nextPage: pageIds[2]
+  }, {
+    text: 'Take to escape page',
+    nextPage: pageIds[1]
   }]
 }];
 

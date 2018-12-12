@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import PageBox from './PageBox';
-import FormInput from './FormInput';
 
 import { isAuthenticated, deleteToken, decodeToken } from '../../lib/auth';
 
@@ -25,9 +24,17 @@ export default class PageShow extends React.Component {
       .then(() => this.props.history.push(`/books/${this.props.match.params.id}/pages`));
   }
 
+  handleClick(pageId) {
+    this.setState({ nextPage: pageId });
+  }
+  handleClick2() {
+    axios.get(`/api/books/${this.props.match.params.id}/pages`);
+  }
+
   componentDidMount() {
     const { bookId, pageId } = this.props.match.params;
     axios.get(`/api/books/${bookId}/pages/${pageId}`)
+      .then(axios.get(`/api/books/${this.props.match.params.id}/pages`))
       .then(res => {
         console.log({ page: res.data });
         this.setState({ page: res.data });
@@ -41,6 +48,7 @@ export default class PageShow extends React.Component {
       <section>
         {page
           ?
+
           <div>
             <div>
               <h1>Page</h1>
@@ -74,9 +82,14 @@ export default class PageShow extends React.Component {
               </div>
               <div className="media-content">
                 <div className="field">
-                  <div className="control">
-                    <FormInput name="nextPage" handleChange={this.handleChange} />
-                  </div>
+                  <p className="control">
+                    <textarea className="textarea"
+                      placeholder="Link to"
+                      name="nextPage"
+                      value={this.state.nextPage || ''}
+                      onChange={this.handleChange}
+                    />
+                  </p>
                 </div>
                 <nav className="level">
                   <div className="level-left">
@@ -88,6 +101,7 @@ export default class PageShow extends React.Component {
               </div>
             </article>
           </div>
+
           :
           <p>Please wait...</p>}
       </section>

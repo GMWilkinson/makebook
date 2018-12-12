@@ -15,7 +15,7 @@ export default class BookNew extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log('Submit handled', this.state);
-    axios.post('/books/new', this.state)
+    axios.post('/api/books', this.state)
       .then(() => this.props.history.push('/books/unfinished'));
   }
 

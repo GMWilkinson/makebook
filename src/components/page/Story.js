@@ -33,17 +33,21 @@ export default class FirstPage extends React.Component {
       <section>
         {page
           ?
-          <div>
-            <h1>Page</h1>
-            <p>{page.text}</p>
-            <div>
-              {page && page.choices.map(choice =>
-                <div key={choice._id} onClick={() => this.handleClick(choice.nextPage)}>
-                  <p>Choice {choice.text}</p>
-                </div>
-              )}
+          <section className="columns">
+            <div className="column is-3"></div>
+            <div className="column is-6 page">
+              <h1 className="title"></h1>
+              <p className="story-text">{page.text}</p>
+              <div>
+                {page && page.choices.map(choice =>
+                  <div key={choice._id} onClick={() => this.handleClick(choice.nextPage)}>
+                    <p className="choice-text">Choice {choice.text}</p>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
+            <div className="column is-3"></div>
+          </section>
 
           :
           <p>Please wait...</p>}

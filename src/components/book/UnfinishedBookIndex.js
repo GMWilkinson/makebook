@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import NewBookBox from './NewBookBox';
 import { Link } from 'react-router-dom';
+import { authorizationHeader } from '../../lib/auth';
 
 class UnfinishedBookIndex extends React.Component {
   constructor(props) {
@@ -23,19 +24,34 @@ class UnfinishedBookIndex extends React.Component {
       .then(result => this.setState({ books: result.data }));
   }
 
+  deleteBook(id) {
+    console.log('deleting book', id);
+    axios.delete(`/api/books/${id}`, authorizationHeader())
+      .then(res => {
+        this.setState({ page: res.data});
+      });
+  }
+
   render() {
-    console.log('this is ', this.state.books);
+    console.log('this is this.state.books', this.state.books);
+    const book = this.state.books;
     return (
       <section>
-        <h1>All the books</h1>
-        <hr />
-        <div className="columns">
-          {this.state.books && this.state.books.map(
-            book => <NewBookBox key={book._id} book={book}/>
-          )}
-        </div>
         <div>
-          <p onClick={this.handleClick}>Click here to complete this book</p>
+          <h1>All the books</h1>
+          <hr />
+          <div className="columns is-multiline">
+            {this.state.books && this.state.books.map(
+              book =>
+                <div key={book._id}>
+                  <NewBookBox book={book}/>
+                  <a className="" onClick={() => this.deleteBook(book._id)}>Delete</a>
+                </div>
+            )}
+            <div>
+
+            </div>
+          </div>
         </div>
       </section>
     );
