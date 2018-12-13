@@ -30,7 +30,7 @@ export default class FirstPage extends React.Component {
     const page = this.state.page;
     console.log('this.state.page is', this.state.page);
     return (
-      <section>
+      <section className="main-story">
         {page
           ?
           <section className="columns">
@@ -40,8 +40,8 @@ export default class FirstPage extends React.Component {
               <p className="story-text">{page.text}</p>
               <div>
                 {page && page.choices.map(choice =>
-                  <div key={choice._id} onClick={() => this.handleClick(choice.nextPage)}>
-                    <p className="choice-text">Choice {choice.text}</p>
+                  <div className="choice-text" key={choice._id} onClick={() => this.handleClick(choice.nextPage)}>
+                    <p className="choice-text">{choice.text}</p>
                   </div>
                 )}
               </div>

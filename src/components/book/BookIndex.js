@@ -15,13 +15,13 @@ class BookIndex extends React.Component {
 
   render() {
     return (
-      <section className="columns">
+      <section className="columns is-multiline">
         <hr />
-        <h1 className="subtitle">All the books</h1>
+        <h1 className="subtitle column is-12">All the books</h1>
         <hr />
-        <div className="columns">
+        <div className="columns column is-12 book-index">
           {this.state.books && this.state.books.map(
-            book => <BookBox key={book._id} book={book}/>
+            book => <BookBox className="" key={book._id} book={book}/>
           )}
         </div>
       </section>

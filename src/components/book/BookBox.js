@@ -8,8 +8,7 @@ function BookBox({ book }) {
         <figure className="image">
           <img src={book.image} />
         </figure>
-        <hr />
-        <h3>{book.name}</h3>
+        <h3 className="is-subtitle is-3">{book.name}</h3>
         <p>{book.author}</p>
       </article>
     </Link>

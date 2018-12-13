@@ -19,14 +19,13 @@ export default class BookShow extends React.Component {
   render() {
     const book = this.state.book;
     return (
-      <section>
+      <section className="main-story">
         {book
           ?
-          <div>
-            <h1>Yay, it worked!</h1>
-            <Link to={`/books/${book._id}/story`}>
-              <h2>{ book.title }</h2>
-              <figure className="image is-3by2">
+          <div className="columns is-centered">
+            <Link className="column is-half" to={`/books/${book._id}/story`}>
+              <h2 className="shadow white-text title">{ book.title }</h2>
+              <figure className="image is-2by3">
                 <img src={ book.image } />
               </figure>
             </Link>

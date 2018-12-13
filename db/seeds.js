@@ -25,8 +25,7 @@ const bookIds = [
   '5be9860fcb16d525543beda1',
   '5be9860fcb16d525543beda2',
   '5be9860fcb16d525543beda3',
-  '5be9860fcb16d525543beda4',
-  '5be9860fcb16d525543beda5'
+  '5be9860fcb16d525543beda4'
 ];
 
 const pageIds = [
@@ -41,15 +40,13 @@ const pageIds = [
   '5be9860fcb16d525543aeda9',
   '5be9860fcb16d525543feda8',
   '5be9860fcb16d525543feda9',
-  '5be9860fcb16d525543heda1',
-  '5be9860fcb16d525543heda2',
-  '5be9860fcb16d525543heda3',
-  '5be9860fcb16d525543heda4',
-  '5be9860fcb16d525543heda5',
-  '5be9860fcb16d525543heda6',
-  '5be9860fcb16d525543heda7',
-  '5be9860fcb16d525543heda8',
-  '5be9860fcb16d525543heda9'
+  '5be9860fcb16d525543deda1',
+  '5be9860fcb16d525543deda2',
+  '5be9860fcb16d525543deda3',
+  '5be9860fcb16d525543deda4',
+  '5be9860fcb16d525543deda5',
+  '5be9860fcb16d525543deda6',
+  '5be9860fcb16d525543deda7'
 ];
 
 const bookData = [{
@@ -138,7 +135,7 @@ const pageData = [{
     text: 'Take to escape page',
     nextPage: pageIds[1]
   }]
-},{
+}, {
   _id: pageIds[3],
   isFirstPage: true,
   book: bookIds[1],
@@ -197,50 +194,59 @@ const pageData = [{
   _id: pageIds[12],
   book: bookIds[3],
   isFirstPage: false,
-  text: 'You escape, but run into a slime covered Nargle Blaster',
+  text: 'You are full up and managed to find some clean pants in the drawer. You are running late but maybe if the wind is in your favour you can make it on time? Doubtful of your chances, you run out of the front door and across the road...',
   choices: [{
-    text: 'Try to eat it',
-    nextPage: pageIds[0]
-  }, {
-    text: 'Run!!!',
-    nextPage: pageIds[2]
+    text: 'And.....',
+    nextPage: pageIds[15]
   }]
 }, {
   _id: pageIds[13],
   book: bookIds[3],
   isFirstPage: false,
-  text: 'Nice!, Eating Nargle Blasters invigorates you, weirdo.',
+  text: 'You get to the station on time. The train is crammed with sheeple. No point giving in now, you take a run up and jam yourself into the tiniest gap. After an excruciating journey of armpits and bad breath you make it to Whitechapel Station. You have plenty of time to walk, but the District line will take you closer...',
   choices: [{
-    text: 'Try to eat it',
-    nextPage: pageIds[1]
+    text: 'Can\'t be bothered to walk. You can handle more squeezage.',
+    nextPage: pageIds[14]
   }, {
-    text: 'Run!!!',
-    nextPage: pageIds[0]
+    text: 'You\'ve got ages. The walk is\'nt far.',
+    nextPage: pageIds[16]
   }]
 }, {
   _id: pageIds[14],
   book: bookIds[3],
   isFirstPage: false,
-  text: 'choice 1 answer',
+  text: 'You have been suffocated by a huge walrus of a man\'s unwashed pits... Bad way to go.',
   choices: [{
-    text: 'Take to choice 2 page',
-    nextPage: pageIds[8]
-  }, {
-    text: 'take to weirdo page',
-    nextPage: pageIds[2]
+    text: 'Return to start',
+    nextPage: pageIds[11]
   }]
 }, {
   _id: pageIds[15],
   book: bookIds[3],
   isFirstPage: false,
-  text: 'Choice 2 answer',
+  text: 'Get hit by a bus! Ouch, you died!',
   choices: [{
-    text: 'Take to weirdo page',
-    nextPage: pageIds[2]
-  }, {
-    text: 'Take to escape page',
-    nextPage: pageIds[1]
+    text: 'Go back to the start.',
+    nextPage: pageIds[11]
   }]
+}, {
+  _id: pageIds[16],
+  book: bookIds[3],
+  isFirstPage: false,
+  text: 'The walk is quite nice and helps you wake up enough that class today doesn\'t seem like such a daunting prospect. You reach GA and go upstairs, the time is 0956(project week). Do you...',
+  choices: [{
+    text: 'Go into class?',
+    nextPage: pageIds[17]
+  }, {
+    text: 'Run outside for a quick smoke?',
+    nextPage: pageIds[15]
+  }]
+}, {
+  _id: pageIds[17],
+  book: bookIds[3],
+  isFirstPage: false,
+  text: 'A sea of tired, project weary faces greet you. Rob comes in and the clank of twenty cups of coffee hitting the table in unison signals that it is time for stand-up, time to air your joys or woes, wins or losses. Either way, you have been chosen... What you talk about?',
+  choices: []
 }];
 
 mongoose.connect(dbURI);

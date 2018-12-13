@@ -16,6 +16,7 @@ import PageNew from './components/page/PageNew';
 import AuthRegister from './components/auth/Register';
 import AuthLogin from './components/auth/Login';
 import Profile from './components/auth/Profile';
+import Footer from './components/Footer';
 
 import 'bulma';
 import './scss/style.scss';

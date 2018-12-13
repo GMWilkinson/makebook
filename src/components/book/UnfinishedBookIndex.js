@@ -36,16 +36,15 @@ class UnfinishedBookIndex extends React.Component {
     console.log('this is this.state.books', this.state.books);
     const book = this.state.books;
     return (
-      <section>
+      <section className="">
         <div>
-          <h1>All the books</h1>
-          <hr />
+          <h1 className="choice-text">Your unfinished books</h1>
           <div className="columns is-multiline">
             {this.state.books && this.state.books.map(
               book =>
-                <div key={book._id}>
-                  <NewBookBox book={book}/>
-                  <a className="" onClick={() => this.deleteBook(book._id)}>Delete</a>
+                <div className="column box-margin is-6" key={book._id}>
+                  <NewBookBox className="" book={book}/>
+                  <a className="delete" onClick={() => this.deleteBook(book._id)}>Delete</a>
                 </div>
             )}
             <div>

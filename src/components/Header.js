@@ -23,11 +23,11 @@ class Header extends React.Component {
       <nav className="navbar">
         {this.state.url && <p>{this.state.url}</p>}
         <div className="navbar-brand">
-          <h2 className="title is-2 page-header">MakeBook</h2>
           {isAuthenticated() && <Link to="/users"><img className="image is-64x64" src={decodeToken().image}/></Link>}
+          <h2 className="title is-2 page-header">MakeBook</h2>          
         </div>
         <div className="navbar-end">
-          <Link className="navbar-item page-header" to="/books">Finished Books</Link>
+          <Link className="navbar-item page-header is-vcentered" to="/books">Finished Books</Link>
           {isAuthenticated() && <Link className="navbar-item page-header" to="/books/new">Create your own story!</Link>}
           {isAuthenticated() && <Link className="navbar-item page-header" to="/books/unfinished">Carry on with a story!</Link>}
           {!isAuthenticated() && <Link className="navbar-item page-header" to="/register">Register</Link>}
