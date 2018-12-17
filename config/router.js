@@ -3,7 +3,7 @@ const books = require('../controllers/books');
 const users = require('../controllers/users');
 const auth = require('../controllers/auth');
 const pages = require('../controllers/pages');
-const secureRoute = require('../lib/secureRoute');
+// const secureRoute = require('../lib/secureRoute');
 
 router.route('/books')
   .get(books.index)
@@ -17,13 +17,11 @@ router.route('/new/writing')
 router.route('/books/:id')
   .get(books.show)
   .delete(books.delete);
-// .post(pages.create);
-// .put(books.update);
 
 router.route('/users')
   .get(users.index);
 
-router.post('/register', secureRoute, auth.register);
+router.post('/register', auth.register);
 router.post('/login', auth.login);
 
 router.route('/books/:bookId/pages')
@@ -41,12 +39,7 @@ router.route('/books/:bookId/pages/:pageId')
   .get(pages.page)
   .put(pages.update)
   .delete(pages.delete);
-// .post(pages.create);
 
 router.post('/books/:bookId/pages/:pageId/choices', pages.choiceCreate);
 
 module.exports = router;
-// Create a page option:
-// POST /books/:bookId/pages/:pageId/options
-// Edit one:
-// PUT /books/:bookId/pages/:pageId/options/:optionId
