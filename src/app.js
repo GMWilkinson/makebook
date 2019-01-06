@@ -16,7 +16,8 @@ import PageNew from './components/page/PageNew';
 import AuthRegister from './components/auth/Register';
 import AuthLogin from './components/auth/Login';
 import Profile from './components/auth/Profile';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
+import Home from './components/Home';
 
 import 'bulma';
 import './scss/style.scss';
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Header />
           <div>
             <Switch>
+              <Route exact path='/makebook' component={Home}/>
               <Route exact path='/books' component={BookIndex}/>
               <Route path='/books/:id/pages/new' component={PageNew}/>
               <Route path='/books/:bookId/pages/page-display' component={PageDisplay}/>

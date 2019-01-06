@@ -27,7 +27,7 @@ body {
 }
 .main-story {
   background-image: url('http://eskipaper.com/images/fantasy-pictures-17.jpg');
-  min-height: 1000px;
+  min-height: 800px;
 }
 .main-index {
   background-image: url('https://cdn.wallpapersafari.com/29/23/IHz9xU.jpg');
@@ -41,12 +41,22 @@ body {
 .title {
   text-align: center;
 }
+.home-title {
+  background-color: rgba(255, 255, 255, 0.8);
+
+}
+.home {
+  background-image: url('https://www.blackgate.com/wp-content/uploads/2017/06/Heroic-Fantasy-Quarterly-banner-3.jpg');
+  background-size: cover;
+  min-height: 600px;
+  z-index: 2;
+}
 .navbar {
   background-image: url('https://www.blackgate.com/wp-content/uploads/2017/06/Heroic-Fantasy-Quarterly-banner-3.jpg');
   background-size: cover;
   background-position: center;
   box-shadow: 0px 5px 3px black;
-  min-height: 100px;
+  // min-height: 100px;
 }
 .story-text {
   font-size: 2em;
