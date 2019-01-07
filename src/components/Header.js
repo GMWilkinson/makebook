@@ -23,8 +23,8 @@ class Header extends React.Component {
       <nav className="navbar" id="navbar">
         {this.state.url && <p>{this.state.url}</p>}
         <div className="navbar-brand">
-          {isAuthenticated() && <Link to="/users"><img className="image is-64x64" src={decodeToken().image}/></Link>}
           <h2 className="title is-2 page-header">MakeBook</h2>
+          {isAuthenticated() && <Link to="/users"><p className="">{decodeToken().username}'s profile</p></Link>}
         </div>
         <div className="navbar-end">
           <Link className="navbar-item page-header is-vcentered" to="/books">Finished Books</Link>

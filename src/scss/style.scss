@@ -41,15 +41,25 @@ body {
 .title {
   text-align: center;
 }
+.home-main {
+  background-image: url('https://cdn.wallpapersafari.com/29/23/IHz9xU.jpg');
+  background-size: cover;
+  min-height: 600px;
+  z-index: 2;
+  padding-top: 20px;
+}
 .home-title {
-  background-color: rgba(255, 255, 255, 0.8);
-
 }
 .home {
   background-image: url('https://www.blackgate.com/wp-content/uploads/2017/06/Heroic-Fantasy-Quarterly-banner-3.jpg');
   background-size: cover;
   min-height: 600px;
-  z-index: 2;
+}
+.home-text {
+  text-align: center;
+  // height: 300px;
+  font-size: 30px;
+  padding-top: 20px;
 }
 .navbar {
   background-image: url('https://www.blackgate.com/wp-content/uploads/2017/06/Heroic-Fantasy-Quarterly-banner-3.jpg');

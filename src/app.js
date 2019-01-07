@@ -31,7 +31,7 @@ class App extends React.Component {
           <Header />
           <div>
             <Switch>
-              <Route exact path='/makebook' component={Home}/>
+              <Route exact path='/' component={Home}/>
               <Route exact path='/books' component={BookIndex}/>
               <Route path='/books/:id/pages/new' component={PageNew}/>
               <Route path='/books/:bookId/pages/page-display' component={PageDisplay}/>

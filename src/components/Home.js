@@ -8,14 +8,19 @@ class Home extends React.Component {
 
   render() {
     return (
-      <main>
-        <div className="title home-title">
+      <main className="home-main">
+        <div className="title is-1 home-title">
           <h1>Welcome to MakeBook</h1>
         </div>
-        <article>
-          <p>Do you remember game-books?</p>
-          <p>With this app you can create your own.</p>
-        </article>
+        <section className="">
+          <article className="home-text is-vcentered">
+            <p>Do you remember game-books?</p>
+            <p>With this app you can create your own!</p>
+            <br />
+            <p>Register or login to be able to create your own books.</p>
+            <p>If not you can always read the books that others have created.</p>
+          </article>
+        </section>
       </main>
     );
   }
