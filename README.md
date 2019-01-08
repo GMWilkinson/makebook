@@ -28,7 +28,7 @@ I made it mobile first.
 
 # Code Snippets
 
-This is the model for the pages. The key 'book' refers to the id of the book that the page belongs to. The key 'nextPage' refers to the id of the next page that the choice connects to.
+This is the model for the pages. The key 'book' refers to the id of the book that the page belongs to. The key 'nextPage' refers to the id of the next page that the choice connects to. The 'isFirstPage' key is there because the first page has no choices linking it and I couldn't get it to understand any other way.
 
 ```javascript
 const pageSchema = mongoose.Schema({
