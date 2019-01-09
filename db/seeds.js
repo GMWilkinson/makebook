@@ -50,18 +50,18 @@ const pageIds = [
 ];
 
 const bookData = [{
-  _id: bookIds[0],
-  isCompleted: true,
-  title: 'My first book',
-  author: 'Grant',
-  image: 'http://www.dahkai.com/postpic/2010/09/old-leather-book-cover_81124.jpg'
-}, {
-  _id: bookIds[1],
-  isCompleted: true,
-  title: 'My great book',
-  author: 'Rob',
-  image: 'http://www.dahkai.com/postpic/2010/09/old-leather-book-cover_81124.jpg'
-}, {
+//   _id: bookIds[0],
+//   isCompleted: true,
+//   title: 'My first book',
+//   author: 'Grant',
+//   image: 'http://www.dahkai.com/postpic/2010/09/old-leather-book-cover_81124.jpg'
+// }, {
+//   _id: bookIds[1],
+//   isCompleted: true,
+//   title: 'My great book',
+//   author: 'Rob',
+//   image: 'http://www.dahkai.com/postpic/2010/09/old-leather-book-cover_81124.jpg'
+// }, {
   _id: bookIds[2],
   isCompleted: false,
   title: 'Uncompleted book',
@@ -69,7 +69,7 @@ const bookData = [{
   image: 'https://boxshot.com/boxshot/gallery/3d-ebook-cover/book-10.png'
 }, {
   _id: bookIds[3],
-  isCompleted: false,
+  isCompleted: true,
   title: 'WDI 37',
   author: 'Grant',
   image: 'https://i.pinimg.com/originals/6a/5a/f0/6a5af02950db36b62e18773bb1adbf18.jpg'
