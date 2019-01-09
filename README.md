@@ -2,13 +2,38 @@
 
 MakeBook is an app for creating game-books. A game-book is a book that at the bottom of each page there are choices at the bottom that determine what happens next. The user can create their own game-book and can also read the books that others have created.
 
+![MakeBook](https://i.imgur.com/FEh7vVH.png)
+
+![MakeBook](https://i.imgur.com/nV5cMtn.png)
+
+# Project Brief
+
+* Use Mongo, Express and Node to build an API and a React front-end app that consumes it
+* Create an API using at least 2 related models, one of which should be a user
+* Include all major CRUD functions in a RESTful API for at least one of those model
+* Consume your own API by making your front-end app with React
+Add authentication to your API to restrict access to appropriate users
+* Deploy your application online so it's publicly accessible
+* A readme.md file
+
+# How to use
+
 To create a book, click on 'Create Your Own Story!' on the nav bar. It will take you to the unfinished books index. Click on the image of the book cover or the title to get taken to the page index where you can then create pages. It is easier to write the pages then link them afterwards.
-Each page is given an id on creation. To attach a page to a choice the user has to paste the id of the page to be attached in the box next to the box for the text of the choice itself.
+Each page is given an id on creation. To attach a page to a choice the user has to paste the id of the page to be attached in the box next to the box for the text of the choice itself. In the update that I'm creating at the moment, the id will be replaced by a page name given by the user.
 
-It is made using Node.js, MongoDB, Express, ReactJS, JavaScript and SCSS. It is on port 4000.
+![MakeBook]
 
-I made it mobile first.
+![MakeBook](https://i.imgur.com/jcVo9NA.png)
 
+![MakeBook](https://i.imgur.com/iWAD0El.png)
+
+![MakeBook]
+
+I was made mobile first. At first it seemed pointless for a writing based app to be used on mobile it is actually quite good if you have an idea on the go.
+
+![MakeBook](https://i.imgur.com/OSs1zjX.png)
+
+![MakeBook](https://i.imgur.com/cWikwvO.png)
 
 # Future Updates
 
@@ -23,8 +48,9 @@ I made it mobile first.
 
 # Bugs
 
-* Unable to get the books to move to the finished books page once finished
+* Unable to get the books to move to the finished books page once finished. I will fix this by creating a button that changes the 'isFinished' value to 'true'.
 * The pages can be deleted but not the book itself
+* When the next page is clicked, the screen position stays in the same place so you have to scroll back up to the top of the page.
 
 # Code Snippets
 
@@ -43,5 +69,17 @@ const pageSchema = mongoose.Schema({
 });
 ```
 
+This is the function that GETs the first page of a book.
+As there is only one first page in a book, the function checks for the page with 'isFirstPage: true'.
+
 ```javascript
+function firstRoute(req, res, next) {
+  Page.findOne({ book: req.params.bookId, isFirstPage: true })
+    .then(page => res.json(page))
+    .catch(next);
+}
+```
+
+```javascript
+
 ```

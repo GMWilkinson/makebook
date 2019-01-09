@@ -34,7 +34,6 @@ router.route('/books/:bookId/pages/first')
   .post(pages.create);
 
 
-
 router.route('/books/:bookId/pages/:pageId')
   .get(pages.page)
   .put(pages.update)
