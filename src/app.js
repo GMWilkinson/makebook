@@ -16,7 +16,7 @@ import PageNew from './components/page/PageNew';
 import AuthRegister from './components/auth/Register';
 import AuthLogin from './components/auth/Login';
 import Profile from './components/auth/Profile';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import Home from './components/Home';
 
 import 'bulma';
@@ -48,6 +48,7 @@ class App extends React.Component {
               <Route exact path='/register' component={AuthRegister}/>
             </Switch>
           </div>
+          <Footer />
         </main>
       </BrowserRouter>
     );
