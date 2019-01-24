@@ -22,7 +22,7 @@ export default class NewFirstPage extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log('Submit handled', this.props.match.params.id);
-    axios.post(`/api/books/${this.props.match.params.id}/pages`, this.state)
+    axios.post(`/api/books/${this.props.match.params.id}/pages/first`, this.state)
       .then(() => this.props.history.push(`/books/${this.props.match.params.id}/pages`));
   }
 

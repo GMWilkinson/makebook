@@ -36,7 +36,7 @@ class UnfinishedBookIndex extends React.Component {
     console.log('this is this.state.books', this.state.books);
     const book = this.state.books;
     return (
-      <section className="">
+      <section className="height">
         <div>
           <h1 className="choice-text">Your unfinished books</h1>
           <div className="columns is-multiline">
